@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import DynamicRemoteComponent from "./DynamicRemoteComponent";
 import React from "react";
 const RemoteUserCard = React.lazy(() => import("userCardRemote/UserCard"));
 interface Message {
