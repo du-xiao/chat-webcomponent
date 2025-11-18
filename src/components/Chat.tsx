@@ -1,11 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import DynamicRemoteComponent from "./DynamicRemoteComponent";
-
+import React from "react";
+const RemoteUserCard = React.lazy(() => import("userCardRemote/UserCard"));
 interface Message {
   type: "text" | "webcomponent";
   text?: string;
   tag?: string;
   url?: string;
+  remote?: string;
+  module?: string;
   props?: Record<string, any>;
   sender: "user" | "bot";
 }
@@ -29,8 +32,8 @@ export default function Chat() {
     setTimeout(() => {
       const botMsg: Message = {
         type: "webcomponent",
-        tag: "user-card",
-        url: "https://cdn.jsdelivr.net/gh/du-xiao/remote-components/components/user-card/v6/user-card.js",
+        module: "UserCard",
+        remote: "usercard_remote",
         props: { name: "du", age: 18 ,listData: [
     { title: "Axxxxxx" },
     { title: "ggggggggggg" },
@@ -120,7 +123,10 @@ export default function Chat() {
                     boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
                   }}
                 >
-                  <DynamicRemoteComponent remote="usercard_remote" module="UserCard" props={msg.props}/>
+                    <React.Suspense fallback={<div>Loading remote component...</div>}>
+      <RemoteUserCard name="Bob" age={32} />
+    </React.Suspense>
+                  {/* <DynamicRemoteComponent remote={msg.remote||''} module={msg.module||''} props={msg.props}/> */}
                 </div>
               )}
             </div>

@@ -8,13 +8,13 @@ export default defineConfig({
     federation({
       name: "host",
       remotes: {
-        usercard_remote: 
-          "http://localhost:4173/assets/remoteEntry.js",
+        userCardRemote: "http://localhost:4173/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom"],
     }),
   ],
   build: {
-    target: "esnext",
+    target: 'esnext',
+    minify: false,
   },
 });
