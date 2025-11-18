@@ -120,7 +120,7 @@ export default function Chat() {
                     boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
                   }}
                 >
-                  <DynamicRemoteComponent tag={msg.tag!} url={msg.url!} props={msg.props} />
+                  <DynamicRemoteComponent remote="usercard_remote" module="UserCard" props={msg.props}/>
                 </div>
               )}
             </div>

@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div>
-      <h2 style={{ padding: 20 }}>React19 WebComponent 动态加载 Demo</h2>
+      <h2 style={{ padding: 20 }}>React19 Module Federation 动态加载 Demo</h2>
       <Chat />
     </div>
   )
