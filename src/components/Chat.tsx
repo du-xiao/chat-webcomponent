@@ -31,10 +31,12 @@ export default function Chat() {
         type: "webcomponent",
         tag: "user-card",
         url: "https://cdn.jsdelivr.net/gh/du-xiao/remote-components/components/user-card/v6/user-card.js",
-        props: { name: "du", age: 18 ,listData: [
-    { title: "Axxxxxx" },
-    { title: "ggggggggggg" },
-  ]},
+        props: {
+          name: "du", age: 18, listData: [
+            { title: "Axxxxxx" },
+            { title: "ggggggggggg" },
+          ]
+        },
         sender: "bot"
       };
       setMessages((prev) => [...prev, botMsg]);
@@ -46,7 +48,7 @@ export default function Chat() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
-   // 🔹 新增：更新 WebComponent props
+  // 🔹 新增：更新 WebComponent props
   const updateBotProps = () => {
     setMessages((prev) =>
       prev.map((msg) => {
@@ -166,7 +168,7 @@ export default function Chat() {
         >
           发送
         </button>
-            <button
+        <button
           onClick={updateBotProps}
           style={{
             marginLeft: 8,
