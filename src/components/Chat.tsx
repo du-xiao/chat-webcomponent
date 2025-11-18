@@ -123,9 +123,9 @@ export default function Chat() {
                     boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
                   }}
                 >
-                    <React.Suspense fallback={<div>Loading remote component...</div>}>
-      <RemoteUserCard name="Bob" age={32} />
-    </React.Suspense>
+              
+      <RemoteUserCard name={msg.props?.name} age={msg.props?.age} listData={msg.props?.listData} />
+
                   {/* <DynamicRemoteComponent remote={msg.remote||''} module={msg.module||''} props={msg.props}/> */}
                 </div>
               )}
