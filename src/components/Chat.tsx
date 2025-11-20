@@ -30,7 +30,7 @@ export default function Chat() {
       const botMsg: Message = {
         type: "webcomponent",
         tag: "user-card",
-        url: "https://cdn.jsdelivr.net/gh/du-xiao/remote-components/components/user-card/v6/user-card.js",
+        url: "https://cdn.jsdelivr.net/gh/du-xiao/remote-components/components/user-card/v7/user-card.js",
         props: {
           name: "du", age: 18, listData: [
             { title: "Axxxxxx" },
@@ -123,6 +123,8 @@ export default function Chat() {
                   }}
                 >
                   <DynamicRemoteComponent tag={msg.tag!} url={msg.url!} props={msg.props} />
+                 
+                   <DynamicRemoteComponent tag={'user-card-vue'} url={'https://cdn.jsdelivr.net/gh/du-xiao/remote-components/components/user-card-vue/v9/user-card-vue.js'} props={msg.props} />
                 </div>
               )}
             </div>
