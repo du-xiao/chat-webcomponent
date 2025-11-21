@@ -1,4 +1,4 @@
-````markdown
+
 # chat-webcomponent
 
 一个轻量、框架无关 (framework-agnostic) 的聊天 Web Component，用于在网页中嵌入聊天界面（支持与机器人、后端服务集成）。
