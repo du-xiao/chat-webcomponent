@@ -122,9 +122,9 @@ export default function Chat() {
                     boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
                   }}
                 >
-                  <DynamicRemoteComponent tag={msg.tag!} url={msg.url!} props={msg.props} />
+                  {/* <DynamicRemoteComponent tag={msg.tag!} url={msg.url!} props={msg.props} /> */}
                  
-                   <DynamicRemoteComponent tag={'user-card-vue'} url={'https://cdn.jsdelivr.net/gh/du-xiao/remote-components/components/user-card-vue/v10/user-card-vue.js'} props={msg.props} />
+                   <DynamicRemoteComponent tag={'user-card-vue'} url={'https://cdn.jsdelivr.net/gh/du-xiao/remote-components/components/user-card-vue/v11/user-card-vue.js'} props={msg.props} />
                 </div>
               )}
             </div>
